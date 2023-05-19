@@ -24,6 +24,7 @@ sir <- function(s0, i0, r0, beta, gamma, days) {
 # write a function to plot the results
 plot_sir <- function(sir, title) {
   # plot the results
+  plot.new()
   plot(sir$s, type="l", col="blue", ylim=c(0,1), xlab="Days", ylab="Fraction of Population", main=title)
   lines(sir$i, col="red")
   lines(sir$r, col="green")
@@ -37,3 +38,5 @@ plot_sir <- function(sir, title) {
 # run the model for 150 days with infection rate of 2.5/6/1000, recovery rate of 1/6 and an initial population of 1000
 sir1 <- sir(1000, 1, 0, 2.5/6/1000, 1/6, 150)
 plot_sir(sir1, "SIR Model with R0=2.5")
+
+q()
